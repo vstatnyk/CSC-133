@@ -6,22 +6,34 @@ import com.codename1.charts.util.ColorUtil;
 public abstract class GameObject {
 
 	// Constructors
-	public GameObject(int size, int r, int g, int b) {
-		Random r = new Random();
+	public GameObject(int size, int color) {
+		Random rand = new Random();
 		
 		this.size = size;
-		this.color = ColorUtil.rgb(r, g, b);
+		this.color = color;
 		
 		double lowXY = size/2;
 		double highX = 1024 - (size/2);
 		double highY = 768 - (size/2);
 //		double randomValue = rangeMin + (rangeMax - rangeMin)
-		double x = lowXY + (highX - lowXY) * r.nextDouble();
-		double y = lowXY + (highY - lowXY) * r.nextDouble();
+		double x = lowXY + (highX - lowXY) * rand.nextDouble();
+		double y = lowXY + (highY - lowXY) * rand.nextDouble();
 		this.location = new Coordinate(x, y);
 	}
 	
 	public GameObject(int color) {
+		
+		Random rand = new Random();
+		this.size = 10 + (50 - 10) * rand.nextInt();
+		
+		double lowXY = size/2;
+		double highX = 1024 - (size/2);
+		double highY = 768 - (size/2);
+//		double randomValue = rangeMin + (rangeMax - rangeMin)
+		double x = lowXY + (highX - lowXY) * rand.nextDouble();
+		double y = lowXY + (highY - lowXY) * rand.nextDouble();
+		this.location = new Coordinate(x, y);
+		
 		this.color = color;
 	}
 	
@@ -48,7 +60,9 @@ public abstract class GameObject {
 			location.setCoordinate(x,y);
 		}
 //		else print out not possible location
-		
+		else{
+			System.out.println("Error: this location is not possible due to size of the object\n GameObject.java line 52");
+		}
 //		location.setCoordinate(x,y);
 	}
 	
