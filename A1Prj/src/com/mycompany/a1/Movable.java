@@ -27,6 +27,9 @@ public class Movable extends GameObject {
 	
 	public void move() {
 		//update location based on heading, speed;
+//		newLocation(x,y) = oldLocation(x,y) + (deltaX, deltaY), where 
+//				deltaX = cos(θ)*speed,   
+//				deltaY = sin(θ)*speed, 
 		
 	}
 	

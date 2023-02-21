@@ -3,7 +3,7 @@ import java.util.Random;
 
 import com.codename1.charts.util.ColorUtil;
 
-public class Robot extends Movable {
+public class Robot extends Movable implements ISteerable {
 	public Robot(int size, double x, double y) {
 //		size has to equal base set by me
 //		(e.g, size of all bases can be 10 and size of all robots can be 40)
