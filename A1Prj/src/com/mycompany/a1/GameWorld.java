@@ -11,6 +11,7 @@ public class GameWorld {
 	      //initial game objects/setup
 		   
 	}
+	public void exit(){}
 	   // additional methods here to
 	   // manipulate world objects and
 	   // related game state data
