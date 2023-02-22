@@ -6,7 +6,7 @@ import com.codename1.charts.util.ColorUtil;
 public abstract class GameObject {
 
 	// Constructors
-	public GameObject(int size, int color) {
+	public GameObject(int color, int size) {
 		Random rand = new Random();
 		
 		this.size = size;
@@ -16,8 +16,10 @@ public abstract class GameObject {
 		double highX = 1024 - (size/2);
 		double highY = 768 - (size/2);
 //		double randomValue = rangeMin + (rangeMax - rangeMin)
-		double x = lowXY + (highX - lowXY) * rand.nextDouble();
-		double y = lowXY + (highY - lowXY) * rand.nextDouble();
+		double x = rand.nextDouble() * (highX - lowXY);
+		double y = rand.nextDouble() * (highY - lowXY);
+//		double x = lowXY + (highX - lowXY) * rand.nextDouble();
+//		double y = lowXY + (highY - lowXY) * rand.nextDouble();
 		this.location = new Coordinate(x, y);
 	}
 	
@@ -30,8 +32,10 @@ public abstract class GameObject {
 		double highX = 1024 - (size/2);
 		double highY = 768 - (size/2);
 //		double randomValue = rangeMin + (rangeMax - rangeMin)
-		double x = lowXY + (highX - lowXY) * rand.nextDouble();
-		double y = lowXY + (highY - lowXY) * rand.nextDouble();
+		double x = rand.nextDouble() * (highX - lowXY);
+		double y = rand.nextDouble() * (highY - lowXY);
+//		double x = lowXY + (highX - lowXY) * rand.nextDouble();
+//		double y = lowXY + (highY - lowXY) * rand.nextDouble();
 		this.location = new Coordinate(x, y);
 		
 		this.color = color;
@@ -40,7 +44,7 @@ public abstract class GameObject {
 	//Attributes
 	private int size;
 	private Coordinate location;
-	private int color;
+	private static int color;
 	
 	//Methods
 	public int getSize(){

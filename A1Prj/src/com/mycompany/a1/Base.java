@@ -10,7 +10,7 @@ public class Base extends Fixed{
 	private int sequenceNumber;
 	
 	public Base(int sequenceNum) {
-		super(10, ColorUtil.rgb(0, 100, 0));
+		super(ColorUtil.rgb(0, 100, 0), 10);
 		this.sequenceNumber = sequenceNum;
 	}
 	

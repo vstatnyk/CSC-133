@@ -5,8 +5,8 @@ package com.mycompany.a1;
 
 // ColorUtil.rgb(r, g, b) for any int color
 public class Fixed extends GameObject {
-	public Fixed(int size, int color){
-		super(size, color);
+	public Fixed(int color, int size){
+		super(color, size);
 	}
 	
 	public Fixed(int color ){

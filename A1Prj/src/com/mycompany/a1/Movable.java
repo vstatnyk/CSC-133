@@ -2,11 +2,12 @@ package com.mycompany.a1;
 import java.util.Random;
 
 public class Movable extends GameObject {
-	protected int heading;
-	protected int speed;
+	private int heading;
+	private int speed;
 	
 	public Movable(int size, int color, int speed, int heading){
 		super(size, color);
+		System.out.println(color);
 		this.speed = speed;
 		this.heading = heading;
 	}
