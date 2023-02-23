@@ -12,30 +12,28 @@ public abstract class GameObject {
 		this.size = size;
 		this.color = color;
 		
-		double lowXY = size/2;
-		double highX = 1024 - (size/2);
-		double highY = 768 - (size/2);
-//		double randomValue = rangeMin + (rangeMax - rangeMin)
-		double x = rand.nextDouble() * (highX - lowXY);
-		double y = rand.nextDouble() * (highY - lowXY);
-//		double x = lowXY + (highX - lowXY) * rand.nextDouble();
-//		double y = lowXY + (highY - lowXY) * rand.nextDouble();
+		int lowXY = size/2;
+		int highX = (1024 - (size/2))+1;
+		int highY = (768 - (size/2)) + 1;
+		
+		double x = lowXY + rand.nextInt(highX);
+		double y = lowXY + rand.nextInt(highY);
+		
 		this.location = new Coordinate(x, y);
 	}
 	
 	public GameObject(int color) {
 		
 		Random rand = new Random();
-		this.size = 10 + (50 - 10) * rand.nextInt();
+		this.size = 11 + rand.nextInt(40);
 		
-		double lowXY = size/2;
-		double highX = 1024 - (size/2);
-		double highY = 768 - (size/2);
-//		double randomValue = rangeMin + (rangeMax - rangeMin)
-		double x = rand.nextDouble() * (highX - lowXY);
-		double y = rand.nextDouble() * (highY - lowXY);
-//		double x = lowXY + (highX - lowXY) * rand.nextDouble();
-//		double y = lowXY + (highY - lowXY) * rand.nextDouble();
+		int lowXY = size/2;
+		int highX = (1024 - (size/2))+1;
+		int highY = (768 - (size/2)) + 1;
+
+		double x = lowXY + rand.nextInt(highX);
+		double y = lowXY + rand.nextInt(highY);
+
 		this.location = new Coordinate(x, y);
 		
 		this.color = color;

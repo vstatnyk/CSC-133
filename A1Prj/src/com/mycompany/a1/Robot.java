@@ -17,10 +17,21 @@ public class Robot extends Movable implements ISteerable {
 		damageLevel = 0;
 		maximumSpeed = 10;
 		energyLevel = 100;
-		
-		
-		
-		
+	}
+	
+	public Robot(int size) {
+//		size has to equal base set by me
+//		(e.g, size of all bases can be 10 and size of all robots can be 40)
+		super(ColorUtil.rgb(50, 70, 20), size);
+
+		this.setSpeed(1);
+		this.setHeading(0);
+		lastBaseReached = 1;
+		steeringDirection = 0;
+		energyConsumptionRate = 1;
+		damageLevel = 0;
+		maximumSpeed = 10;
+		energyLevel = 100;
 	}
 	
 	private int lastBaseReached;
