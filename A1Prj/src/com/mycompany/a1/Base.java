@@ -27,4 +27,13 @@ public class Base extends Fixed{
        this.sequenceNumber = sequenceNumber;
     }
 	
+	public String info(){
+		String s = "";
+		s = s + "Base: Loc- " + + this.getLocation().getX() +", " + this.getLocation().getY() +" ";
+		s = s + "Color: [" + ColorUtil.red(this.getColor()) + ", " + ColorUtil.green(this.getColor()) + ", " + ColorUtil.blue(this.getColor()) +"]" +" ";
+		s = s + "Size: " + this.getSize() + " ";
+		s = s + "Sequence Number: " + this.getSequence()+" ";
+		return s;
+	}
+	
 }

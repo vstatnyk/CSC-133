@@ -59,20 +59,17 @@ public class Robot extends Movable implements ISteerable {
 	public void getLastBaseReached(int lbr){this.lastBaseReached = lbr;}
 	
 	public String info(){
+		
 		String s = "";
-		s = s + "Object type: Robot\n";
-		s = s + "Size: " + this.getSize() + "\n";
-		s = s + "Color: (" + ColorUtil.red(this.getColor()) + " " + ColorUtil.green(this.getColor()) + " " + ColorUtil.blue(this.getColor()) +")\n";
-		s = s + "Location: (" + this.getLocation().getX() +", " + this.getLocation().getY() + ")\n";
-		s = s + "Speed: " + this.getSpeed() + "\n";
-		s = s + "Heading: " + this.getHeading() + "\n";
-		s = s + "Last Base Reached: " + this.getLastBaseReached() + "\n";
-		s = s + "Steering Direction: " + this.getSteeringDirection() + "\n";
-		s = s + "Energy Consumption Rate: " + this.getEnergyConsumptionRate() + "\n";
-		s = s + "Damage Level: " + this.getDamageLevel() + "\n";
-		s = s + "Maximum Speed: " + this.getMaximumSpeed() + "\n";
-		s = s + "Energy Level: " + this.getEnergyLevel() + "\n";
-			
+		s = s + "Robot: Loc- " + + this.getLocation().getX() +", " + this.getLocation().getY() +" ";
+		s = s + "Color: [" + ColorUtil.red(this.getColor()) + ", " + ColorUtil.green(this.getColor()) + ", " + ColorUtil.blue(this.getColor()) +"]" +" ";
+		s = s + "Heading: " + this.getHeading()+" ";
+		s = s + "Speed: " + this.getSpeed()+" ";
+		s = s + "Size: " + this.getSize() + "\n    ";
+		s = s + "Steering Direction: " + this.getMaximumSpeed() +" ";
+		s = s + "Steering Direction: " + this.getSteeringDirection() +" ";
+		s = s + "Energy Level: " + this.getEnergyLevel() +" ";
+		s = s + "Damage Level: " + this.getDamageLevel();
 		return s;
 	}
 	

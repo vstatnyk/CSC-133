@@ -33,8 +33,7 @@ public class GameWorld {
 			bases.add(new Base(i));
 		}
 		for(int i = 0; i < bases.size(); i++ ){
-			System.out.println("Base: " + bases.get(i).getSequence() + " (" +bases.get(i).getLocation().getX() + ", "+ bases.get(i).getLocation().getY() + ")");
-			System.out.println("	size: " + bases.get(i).getSize() );
+			System.out.println(bases.get(i).info());
 		}
 		
 		r.setLocation(bases.get(0).getLocation().getX(), bases.get(0).getLocation().getY());
@@ -44,8 +43,7 @@ public class GameWorld {
 			EnergyStations.add(new EnergyStation());
 		}
 		for(int i = 0; i < EnergyStations.size(); i++ ){
-			System.out.println("Energy Station Capacity: " + EnergyStations.get(i).getCapacity() + " (" +EnergyStations.get(i).getLocation().getX() + ", "+ EnergyStations.get(i).getLocation().getY() + ")");
-			System.out.println("	size: " + EnergyStations.get(i).getSize() );
+			System.out.println(EnergyStations.get(i).info());
 		}
 		
 		//drones
@@ -53,8 +51,7 @@ public class GameWorld {
 			Drones.add(new Drone(10 + rand.nextInt(41)));
 		}
 		for(int i = 0; i < Drones.size(); i++ ){
-			System.out.println("Drone speed: " + Drones.get(i).getSpeed() + " (" +Drones.get(i).getLocation().getX() + ", "+ Drones.get(i).getLocation().getY() + ")");
-			System.out.println("	size: " + Drones.get(i).getSize() );
+			System.out.println(Drones.get(i).info());
 		}
 		
 

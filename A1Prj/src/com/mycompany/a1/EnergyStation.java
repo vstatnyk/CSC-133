@@ -20,4 +20,13 @@ public class EnergyStation extends Fixed{
 		}
 		return true;
 	}
+	
+	public String info(){
+		String s = "";
+		s = s + "Energy Stattion: Loc- " + + this.getLocation().getX() +", " + this.getLocation().getY() +" ";
+		s = s + "Color: [" + ColorUtil.red(this.getColor()) + ", " + ColorUtil.green(this.getColor()) + ", " + ColorUtil.blue(this.getColor()) +"]" +" ";
+		s = s + "Size: " + this.getSize() + " ";
+		s = s + "Capacity: " + this.getCapacity()+" ";
+		return s;
+	}
 }

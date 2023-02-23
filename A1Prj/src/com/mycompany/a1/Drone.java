@@ -12,4 +12,15 @@ public class Drone extends Movable{
 		this.setHeading(r.nextInt(360));
 	}
 	
+public String info(){
+		
+		String s = "";
+		s = s + "Drone: Loc- " + + this.getLocation().getX() +", " + this.getLocation().getY() +" ";
+		s = s + "Color: [" + ColorUtil.red(this.getColor()) + ", " + ColorUtil.green(this.getColor()) + ", " + ColorUtil.blue(this.getColor()) +"]" +" ";
+		s = s + "Heading: " + this.getHeading()+" ";
+		s = s + "Speed: " + this.getSpeed()+" ";
+		s = s + "Size: " + this.getSize() + " ";
+		return s;
+	}
+	
 }
