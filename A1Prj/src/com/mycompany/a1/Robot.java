@@ -7,15 +7,15 @@ public class Robot extends Movable implements ISteerable {
 	public Robot(int size, double x, double y) {
 //		size has to equal base set by me
 //		(e.g, size of all bases can be 10 and size of all robots can be 40)
-		super(ColorUtil.rgb(50, 70, 20), size);
+		super(ColorUtil.rgb(0, 255, 255), size);
 		this.setLocation(x, y);
 		this.setSpeed(1);
 		this.setHeading(0);
 		lastBaseReached = 1;
 		steeringDirection = 0;
-		energyConsumptionRate = 1;
+//		energyConsumptionRate = 1;
 		damageLevel = 0;
-		maximumSpeed = 10;
+//		maximumSpeed = 10;
 		energyLevel = 100;
 	}
 	
@@ -28,18 +28,20 @@ public class Robot extends Movable implements ISteerable {
 		this.setHeading(0);
 		lastBaseReached = 1;
 		steeringDirection = 0;
-		energyConsumptionRate = 1;
+//		energyConsumptionRate = 1;
 		damageLevel = 0;
-		maximumSpeed = 10;
+//		maximumSpeed = 10;
 		energyLevel = 100;
 	}
 	
 	private int lastBaseReached;
 	private int steeringDirection; // + - 5 degrees in range 0-40
-	private int energyConsumptionRate;
+	private int energyConsumptionRate = 1;
 	private int damageLevel; 
-	private int maximumSpeed;
+	private int maximumSpeed = 10;
 	private int energyLevel;
+	private int maxDamageLevel = 5;
+//	private int 
 
 	
 	
@@ -52,11 +54,44 @@ public class Robot extends Movable implements ISteerable {
 	public int getLastBaseReached(){return this.lastBaseReached;}
 	
 	public void SetSteeringDirection(int sd){this.steeringDirection = sd;}
-	public void getMaximumSpeed(int ms) {this.maximumSpeed = ms;}
-	public void getEnergyLevel(int el){this.energyLevel = el;}
-	public void getEnergyConsumptionRate(int ecr){this.energyConsumptionRate = ecr;}
-	public void getDamageLevel(int dl){this.damageLevel = dl;}
-	public void getLastBaseReached(int lbr){this.lastBaseReached = lbr;}
+//	public void setMaximumSpeed(int ms) {this.maximumSpeed = ms;}
+	public void setEnergyLevel(int el){this.energyLevel = el;}
+//	public void setEnergyConsumptionRate(int ecr){this.energyConsumptionRate = ecr;}
+	public void setDamageLevel(int dl){this.damageLevel = dl;}
+	public void setLastBaseReached(int lbr){this.lastBaseReached = lbr;}
+	
+	
+	
+	public void accelerate(){
+		//needs energy level and damage level varibales to play affect
+		this.setSpeed(this.getSpeed() + 1);
+	}
+	
+	public void brake(){
+		int newSpeed = this.getSpeed() - 1;
+		if (newSpeed < 0) {
+			this.setSpeed(0);
+			return;
+		}
+		this.setSpeed(newSpeed);
+	}
+	
+	public void droneCollision(){};
+	public void baseColloisiion(){};
+	public void reset(double x, double y){
+		this.setLocation(x, y);
+		this.setSpeed(1);
+		this.setHeading(0);
+		lastBaseReached = 1;
+		steeringDirection = 0;
+//		energyConsumptionRate = 1;
+		damageLevel = 0;
+//		maximumSpeed = 10;
+		energyLevel = 100;
+		this.setColor(0, 255, 255);
+		
+	};
+	
 	
 	public String info(){
 		

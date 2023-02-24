@@ -31,8 +31,36 @@ public class Game extends com.codename1.ui.Form{
 				case 'x': 
 					gw.exit();  
 					break; 
+				case 'a':
+//					TODO: add more functionalitys
+					gw.getRobot().accelerate();  
+					break; 
+				case 'b': 
+//					WORKS
+					 gw.getRobot().brake(); 
+					break; 
+//				case 'l': 
+//					gw.exit();  
+//					break; 
+//				case 'r': 
+//					gw.exit();  
+//					break; 
+				case 'm': 
+					gw.map();  
+					break; 
+				case 't': 
+					gw.getRobot().move();  
+					break; 
+//				case 'x': 
+//					gw.exit();  
+//					break; 
+					
 				default:
 					System.out.println("Default of Game switch statement invoked");
+//					WORKS
+//					gw.getRobot().move();  
+//					
+//					System.out.println(gw.getRobot().info());
 					}
 				
 	 			//add code to handle rest of the commands  
