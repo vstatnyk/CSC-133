@@ -32,6 +32,10 @@ public class Movable extends GameObject {
 //				deltaX = cos(θ)*speed,   
 //				deltaY = sin(θ)*speed, 
 		
+		double deltaX = Math.cos(getHeading()) * this.speed;
+		double deltaY = Math.sin(getHeading()) * this.speed;
+		this.setLocation(this.getLocation().getX() + deltaX, this.getLocation().getY() + deltaY);
+		
 	}
 	
 	public void setSpeed(int speed) {
