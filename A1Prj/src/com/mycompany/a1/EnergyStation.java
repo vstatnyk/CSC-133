@@ -14,12 +14,17 @@ public class EnergyStation extends Fixed{
 		return this.capacity;
 	}
 	
+	public void setCapacity(int c){
+		this.capacity = c;
+	}
+	
 	public boolean isEmpty(){
 		if(this.capacity != 0){
 			return false;
 		}
 		return true;
 	}
+	
 	
 	public String info(){
 		String s = "";

@@ -11,6 +11,14 @@ public class Drone extends Movable{
 		this.setSpeed(5 + r.nextInt(6));
 		this.setHeading(r.nextInt(360));
 	}
+
+public void resetHeading(){
+	Random r = new Random();
+	this.setHeading(super.getHeading()+r.nextInt(5));
+}
+public void move(){
+	
+}
 	
 public String info(){
 		

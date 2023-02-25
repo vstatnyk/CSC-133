@@ -42,7 +42,7 @@ public abstract class GameObject {
 	//Attributes
 	private int size;
 	private Coordinate location;
-	private static int color;
+	private int color;
 	
 	//Methods
 	public int getSize(){

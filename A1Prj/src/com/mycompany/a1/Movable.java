@@ -27,11 +27,6 @@ public class Movable extends GameObject {
 	}
 	
 	public void move() {
-		//update location based on heading, speed;
-//		newLocation(x,y) = oldLocation(x,y) + (deltaX, deltaY), where 
-//				deltaX = cos(θ)*speed,   
-//				deltaY = sin(θ)*speed, 
-		
 		double deltaX = Math.cos(getHeading()) * this.speed;
 		double deltaY = Math.sin(getHeading()) * this.speed;
 		this.setLocation(this.getLocation().getX() + deltaX, this.getLocation().getY() + deltaY);
@@ -47,7 +42,16 @@ public class Movable extends GameObject {
 	}
 	
 	public void setHeading(int heading) {
+		if(heading >359){
+			this.heading = heading%360;
+			return;
+		}
+		else if(heading < 0) {
+			this.heading = 360+heading;
+			return;
+		}
 		this.heading = heading;
+		 
 	}
 	
 	public int getHeading() {
